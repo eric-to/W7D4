@@ -64,8 +64,7 @@
 
 
         background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
-        background-size: 400% 400%;
-        animation: Gradient 2s infinite;
+        background: url('https://static.comicvine.com/uploads/original/11116/111164301/3876755-6032727170-pikac.gif')
       }
 
       img {
@@ -77,6 +76,65 @@
         grid-gap: 3px;
       }
 
+      .pokemon-entry-page {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        background: gold;
+        color: black;
+      }
+
+      .page {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .page p {
+        font-size: 20px;
+      }
+
+      .pokemon-entry-page img {
+        width: 200px;
+        height: 200px;
+      }
+
+      .all-content-container {
+        display: grid;
+        grid-template-columns: 1fr 20%;
+      }
+
+      .song {
+        width: 100%;
+        background: black;
+      }
+
+      .sub-header {
+        display: flex;
+      }
+
+      .sub-header img {
+        width: 50px;
+        height: 50px;
+        animation: spin 1s infinite;
+      }
+
+      @keyframes spin {
+        from {
+          -webkit-transform: rotate(0deg);
+          -o-transform: rotate(0deg);
+          transform: rotate(0deg);
+          }
+        to {
+          -webkit-transform: rotate(360deg);
+          -o-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+
     </style>
   </head>
 
@@ -86,7 +144,14 @@
       <img src="https://media.giphy.com/media/pRjxSa5WlaDXq/giphy.gif">
       <img src="https://media.giphy.com/media/5jjASagXcBaDK/giphy.gif">
     </header>
-
+    <div class="sub-header">
+      <img src="http://purepng.com/public/uploads/large/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617bdog.png">
+      <audio controls class="song">
+        <source src="https://ia801207.us.archive.org/25/items/PokemonThemeSong/Pok%C3%A9mon%20Theme%20Song.mp3" type="audio/mpeg">
+      </audio>
+      <img src="http://purepng.com/public/uploads/large/purepng.com-pokeballpokeballdevicepokemon-ballpokemon-capture-ball-17015278258617bdog.png">
+    </div>
     <%= yield %>
+
   </body>
 </html>
