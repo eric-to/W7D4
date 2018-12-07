@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pokedex</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+
+    <script type="text/javascript">
+      window.POKEMON_TYPES = <%=raw Pokemon::TYPES %>
+    </script>
+
+    <style>
+      a {
+        text-decoration:none;
+      }
+
+      a:visited {
+        color: white;
+      }
+
+      body {
+        background-color: black;
+        font-family: Helvetica;
+      }
+
+      .pokemon-entries-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-gap: 2px;
+      }
+
+      .pokemon-entry {
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: 1px solid white;
+        font-size: 18px;
+        padding: 10px;
+      }
+
+      @-webkit-keyframes Gradient {
+        0% {
+          background-position: 0% 50%
+        }
+        50% {
+          background-position: 100% 50%
+        }
+        100% {
+          background-position: 0% 50%
+        }
+      }
+
+      .pokemon-entry:nth-child(even) {
+        background-color: maroon;
+      }
+
+      .pokemon-entry:hover {
+        background-color: #a17f1a;
+        color: white;
+
+
+        background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+        background-size: 400% 400%;
+        animation: Gradient 2s infinite;
+      }
+
+      img {
+        height: 100px;
+        width: 100px;
+      }
+
+      header {
+        grid-gap: 3px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <img src="http://pa1.narvii.com/5822/5182c04979002a215435bee7cb28358d79b78e18_hq.gif">
+      <img src="https://media.giphy.com/media/pRjxSa5WlaDXq/giphy.gif">
+      <img src="https://media.giphy.com/media/5jjASagXcBaDK/giphy.gif">
+    </header>
+
+    <%= yield %>
+  </body>
+</html>
